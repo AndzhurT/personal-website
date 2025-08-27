@@ -1,0 +1,40 @@
+.custom-cursor {
+  width: 20px;
+  height: 20px;
+  max-width: 20px;
+  max-height: 20px;
+  mix-blend-mode: exclusion;
+  background-color: #ffffff !important;
+  border-radius: 100%;
+  pointer-events: none;
+  z-index: 10000000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform-origin: center;
+  will-change: transform;
+  opacity: 1;
+
+  transition: all 0.2s ease-out;
+}
+
+@media screen and (max-width: 750px) {
+  .custom-cursor {
+    display: none;
+  }
+}
+
+.hover-mode.custom-cursor{
+  mix-blend-mode: exclusion;
+  opacity: 1;
+  border: 2px solid #ffffff !important;
+  border-radius: 100%;
+  background: #ffffff !important;
+  max-width: 90px;
+  max-height: 90px;
+  width: 90px;
+  height: 90px;
+  margin-left: -30px;
+  margin-top: -30px;
+  transition: all 0.2s ease-out;
+}
