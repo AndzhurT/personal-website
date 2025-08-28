@@ -7,6 +7,12 @@
   background-color: #0a0a0a !important;
 }
 
+.layout#layout_full {
+  height: auto;
+  min-height: 100vh;
+  overflow: auto;
+}
+
 .container {
   height: 100vh;
   width: 100vw;
@@ -15,6 +21,31 @@
   display: grid;
   grid-template-columns: 47% 1fr;
   background-color: #0a0a0a !important;
+}
+
+.container.home-layout {
+  height: auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container.home-layout .fixed {
+  height: 100vh;
+  flex-shrink: 0;
+}
+
+.container.home-layout .main {
+  height: auto;
+  overflow-y: visible;
+}
+
+.container.home-layout .main .pages_container {
+  padding: 0;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .container .fixed {
@@ -64,6 +95,8 @@
   flex-grow: 1;
   background-color: #0a0a0a !important;
   margin: 0 !important;
+  min-height: 100vh;
+  height: 100vh;
 }
 
 /*===== RESPONSIVE STYLING =====*/
@@ -149,15 +182,15 @@
 /* Fixed Side Elements */
 .side-element {
     position: fixed;
-    top: 0;
-    bottom: 0;
+    top: 50%;
+    transform: translateY(-50%);
     z-index: 999;
     width: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-  }
+  } 
   
   .side-element--right {
     right: 40px;

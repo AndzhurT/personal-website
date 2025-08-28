@@ -56,7 +56,6 @@ const Bio = ({ active }) => {
 
   return (
     <div className="base_container">
-      <div></div>
       <div className="hero">
         <div className="intro_box">
           <h1>
@@ -72,8 +71,8 @@ const Bio = ({ active }) => {
           <p>
             <span>
               I'm a <span className="highlight">software engineer</span> passionate about
-              solving <span className="highlight">problems </span> and{' '}
-              <span className="highlight">building new technologies</span>. I am interested in{' '}
+              solving <span className="highlight">problems </span> and building{' '}
+              <span className="highlight">accessible, human-centered products</span>. I am interested in{' '}
               <span className="highlight">web development</span>,{' '}
               <span className="highlight">automation scripts</span>, and {' '}
               <span className="highlight">machine learning</span>. In my free time, I enjoy reading{' '}

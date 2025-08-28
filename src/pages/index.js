@@ -5,9 +5,9 @@ import Cursor from "../shared/cursor/Cursor";
 const IndexPage = () => {
   return (
     <Cursor>
-      <Layout home active="work">
+      <Layout home active="about">
         <div>
-          {/* Main content for work/portfolio page can be added here */}
+          {/* About section will be displayed automatically when home=true */}
         </div>
       </Layout>
     </Cursor>

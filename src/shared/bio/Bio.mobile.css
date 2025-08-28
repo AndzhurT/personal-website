@@ -1,6 +1,7 @@
 #mobile .base_container {
   padding: 0;
-  height: auto;
+  height: 100vh;
+  min-height: 100vh;
   flex-grow: unset;
 }
 

@@ -3,8 +3,10 @@ import "./Layout.css";
 import "../css/global.css";
 import Seo from "../shared/seo/Seo";
 import Bio from "../shared/bio/Bio";
+import About from "../shared/about/About";
 import Header from "../shared/header/Header";
 import Socials from "../shared/socials/Socials";
+import Navigation from "../shared/navigation/Navigation";
 
 const Layout = ({ children, title, active, home, article }) => {
   return (
@@ -90,20 +92,48 @@ const Layout = ({ children, title, active, home, article }) => {
         className={`layout ${article && "layout_article"}`}
         id={home ? "layout_full" : ""}
       >
+        {/* Main Navigation */}
+        <Navigation />
+        
         <div className="mobile_container">
           <Header />
-          <div id="mobile">{home ? <Bio /> : children}</div>
+          <div id="mobile">
+            {home ? (
+              <>
+                <Bio />
+                <About />
+              </>
+            ) : (
+              children
+            )}
+          </div>
           <Socials />
         </div>
 
-        <div className="container">
-          <div className="fixed">
-            <Bio active={active} />
-          </div>
-
-          <div className="main">
-            <div className="pages_container">{children}</div>
-          </div>
+        <div className={`container ${home ? 'home-layout' : ''}`}>
+          {home ? (
+            <>
+              <div className="fixed">
+                <Bio active={active} />
+              </div>
+              <div className="main">
+                <div className="pages_container">
+                  <About />
+                </div>
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="fixed">
+                <Bio active={active} />
+              </div>
+              <div className="main">
+                <div className="pages_container">
+                  {children}
+                </div>
+              </div>
+            </>
+          )}
         </div>
         
         {/* Fixed Side Elements */}
