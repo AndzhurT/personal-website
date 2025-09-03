@@ -52,6 +52,50 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Global Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 12px;
+  z-index: 99999;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #F5D061;
+  border-radius: 6px;
+  border: 2px solid #0a0a0a;
+  z-index: 99999;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #F8F6F6;
+  z-index: 99999;
+}
+
+/* Firefox scrollbar styling */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #F5D061 #0a0a0a;
+}
+
+/* Ensure scrollbar is always on top */
+::-webkit-scrollbar-corner {
+  background: #0a0a0a;
+  z-index: 99999;
+}
+
+/* Additional scrollbar container styling */
+body::-webkit-scrollbar {
+  z-index: 99999 !important;
+}
+
+html::-webkit-scrollbar {
+  z-index: 99999 !important;
+}
+
 html,
 body {
   height: 100vh;
@@ -97,12 +141,7 @@ p {
   font-size: var(--normal-font);
 }
 
-@media (min-width: 1400px) {
-  .layout {
-    max-width: 1600px;
-    margin: auto;
-  }
-}
+/* Removed max-width constraint to allow scrollbar to stick to screen edge */
 
 body {
   --h1-font: 2.5rem;
@@ -137,6 +176,9 @@ body {
     --themeColor2: #F5D061;
     --themeColor3: #2A363B;
     --themeColor4: #CF4647;
+    /* UI Sizes */
+    --navbarH: 70px;
+    --scrollbarW: 12px;
     
     /* Text Colors */
     --text-primary: #ffffff;

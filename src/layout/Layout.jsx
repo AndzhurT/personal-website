@@ -110,16 +110,16 @@ const Layout = ({ children, title, active, home, article }) => {
           <Socials />
         </div>
 
-        <div className={`container ${home ? 'home-layout' : ''}`}>
+        <div className={`container ${home ? 'home-vertical' : ''}`}>
           {home ? (
             <>
-              <div className="fixed">
-                <Bio active={active} />
-              </div>
-              <div className="main">
-                <div className="pages_container">
+              <div className="main main--vertical">
+                <section className="hero-full">
+                  <Bio active={active} />
+                </section>
+                <section className="pages_container">
                   <About />
-                </div>
+                </section>
               </div>
             </>
           ) : (

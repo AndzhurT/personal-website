@@ -9,6 +9,9 @@
   transform: translateY(0);
   margin-top: 0;
   width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 @keyframes fadeInUp {
@@ -23,6 +26,7 @@
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 4rem;
+  box-sizing: border-box;
 }
 
 .about-header {
@@ -73,23 +77,46 @@
 }
 
 .about-photo-placeholder {
-  width: 300px;
-  height: 350px;
+  width: 350px;
+  height: 400px;
   background-color: rgba(245, 208, 97, 0.1);
-  border: 2px dashed var(--themeColor2);
-  border-radius: 8px;
+  border: 2px solid var(--themeColor4);
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--themeColor2);
+  color: var(--themeColor4);
   font-family: 'air-light', sans-serif;
   position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
 }
 
-.about-photo-placeholder::after {
-  content: "Photo will go here";
-  opacity: 0.7;
+.about-photo-placeholder:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: var(--themeColor4);
+  box-shadow: 
+    0 20px 40px rgba(207, 70, 71, 0.4),
+    0 10px 20px rgba(0, 0, 0, 0.4);
 }
+
+.about-photo-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  /* the image is initially position a bit to the left of the div */
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+  filter: grayscale(20%) brightness(0.9);
+}
+
+.about-photo-placeholder:hover img {
+  transform: scale(1.08);
+  filter: grayscale(0%) brightness(1.1);
+}
+
 
 .about-text {
   font-family: 'air-light', sans-serif;
@@ -210,8 +237,8 @@
   }
   
   .about-photo-placeholder {
-    width: 250px;
-    height: 300px;
+    width: 300px;
+    height: 350px;
   }
 }
 

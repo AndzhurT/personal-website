@@ -1,5 +1,6 @@
 import React from 'react';
 import './About.css';
+import pfp from '../../assets/static/pfp.jpg';
 
 const About = () => {
   return (
@@ -36,7 +37,7 @@ const About = () => {
             </div>
             
             <div className="about-skills">
-              <h3>Technologies I've been working with:</h3>
+              <h3>Here're a few technologies I've been working with recently:</h3>
               <div className="skills-grid">
                 <div className="skill-category">
                   <h4>Frontend</h4>
@@ -75,9 +76,8 @@ const About = () => {
           </div>
           
           <div className="about-right">
-            {/* Photo will go here */}
             <div className="about-photo-placeholder">
-              {/* Add your photo here later */}
+                <img src={pfp} alt="Andzhur Terminkeev" />
             </div>
           </div>
         </div>
