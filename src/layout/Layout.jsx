@@ -4,6 +4,7 @@ import "../css/global.css";
 import Seo from "../shared/seo/Seo";
 import Bio from "../shared/bio/Bio";
 import About from "../shared/about/About";
+import Experience from "../shared/experience/Experience";
 import Header from "../shared/header/Header";
 import Socials from "../shared/socials/Socials";
 import Navigation from "../shared/navigation/Navigation";
@@ -102,6 +103,7 @@ const Layout = ({ children, title, active, home, article }) => {
               <>
                 <Bio />
                 <About />
+                <Experience />
               </>
             ) : (
               children
@@ -119,6 +121,9 @@ const Layout = ({ children, title, active, home, article }) => {
                 </section>
                 <section className="pages_container">
                   <About />
+                </section>
+                <section className="pages_container">
+                  <Experience />
                 </section>
               </div>
             </>
