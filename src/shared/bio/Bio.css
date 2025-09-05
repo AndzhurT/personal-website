@@ -4,12 +4,21 @@
     justify-content: center;
     height: calc(100vh - 148px);
     width: 100%;
+    position: relative; /* Enable positioning for particles */
+    overflow: hidden; /* Contain particles within hero section */
+    background-color: rgba(255, 0, 0, 0.5); /* Force transparent background color */
 }
 
 .intro_box {
-  display: flex;
+  display: inline-flex; /* Fit content width instead of full width */
   align-items: center;
   margin-bottom: 10px;
+  position: relative; /* Ensure text appears above particles */
+  z-index: 20; /* Higher than particles (z-index: 10) */ /* Force transparent background */
+  background-color: rgba(255, 255, 0, 0.5); /* Force transparent background color */
+  width: fit-content; /* Explicitly fit content */
+  border: none; /* Remove any borders */
+  box-shadow: none; /* Remove any shadows */
 }
 
 .intro_box h1 {
@@ -19,10 +28,12 @@
   margin-right: 15px;
   margin-top: 0;
   margin-bottom: 0;
+  background-color: rgba(255, 255, 0, 0.5);
 }
 
 .intro_box h3 {
   font-size: var(--h3-font);
+  background-color: rgba(255, 255, 0, 0.5);
 }
 
 .intro_box .avi {
@@ -44,6 +55,7 @@
 .auto-type {
   color: #ffffff;
   font-weight: 700;
+  background-color: rgba(255, 255, 0, 0.5);
 }
 
 .cursor-blink {
@@ -61,8 +73,15 @@
 }
 
 .description {
-  display: flex;
-  padding-right: 65%;
+  display: inline-flex; /* Fit content width instead of full width */
+  position: relative; /* Ensure text appears above particles */
+  z-index: 20; /* Higher than particles (z-index: 10) */
+  /* Force transparent background */
+  background-color: rgba(255, 255, 0, 0.5);/* Force transparent background color */
+  width: fit-content; /* Explicitly fit content */
+  max-width: 30%; /* Maintain responsive max-width */
+  border: none; /* Remove any borders */
+  box-shadow: none; /* Remove any shadows */
 }
 
 .description p {
@@ -73,15 +92,21 @@
   color: #ffffff;
   margin: 0;
   line-height: 2;
+  background: transparent !important;
+  background-color: transparent !important;
 }
 
 .description p span {
   color: #777778;
+  background: transparent !important;
+  background-color: transparent !important;
 }
 
 .description p span.highlight {
   color: var(--themeColor2);
   opacity: 0.9;
+  background: transparent !important;
+  background-color: transparent !important;
 }
 
 .description p a {
@@ -174,6 +199,11 @@
 }
 
 @media (max-width: 993px) {
+  .hero {
+    /* Ensure particles are contained on mobile */
+    overflow: hidden;
+  }
+  
   .intro_box .avi {
     display: initial;
     width: fit-content;
@@ -189,6 +219,24 @@
     padding: 0.75rem 1rem;
     position: sticky;
     bottom: 0;
+  }
+}
+
+/* Override base container background to allow particles through */
+.base_container {
+  background-color: transparent !important;
+  background: transparent !important;
+}
+
+/* Additional mobile optimizations for particles */
+@media (max-width: 768px) {
+  .description {
+    max-width: 90%; /* Allow more width on mobile */
+  }
+  
+  .intro_box {
+    width: fit-content; /* Maintain fit-content on mobile */
+    max-width: 90%; /* But allow wrapping on very small screens */
   }
 }
 

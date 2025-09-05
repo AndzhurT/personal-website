@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Bio.css';
 import './Bio.mobile.css';
+import ParticlesSimple from '../particles/ParticlesSimple';
 
 import avi from '../../assets/images/andzhur_big.jpg';
 import arrow from '../../assets/svg/arrow.svg';
@@ -57,6 +58,9 @@ const Bio = ({ active }) => {
   return (
     <div className="base_container">
       <div className="hero">
+        {/* Particles background only for the hero section */}
+        <ParticlesSimple />
+        
         <div className="intro_box">
           <h1>
             Moshi moshi, I'm <br /> Andzhur Terminkeev,
